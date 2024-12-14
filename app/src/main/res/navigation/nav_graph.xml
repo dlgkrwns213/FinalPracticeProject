@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.finalpracticeproject.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_mainFragment_to_recordFragment"
+            app:destination="@+id/recordFragment"/>
+
+        <action
+            android:id="@+id/action_mainFragment_to_showFragment"
+            app:destination="@+id/saveFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/recordFragment"
+        android:name="com.example.finalpracticeproject.RecordFragment"
+        android:label="fragment_record"
+        tools:layout="@layout/fragment_record">
+        <action
+            android:id="@+id/action_recordFragment_to_mainFragment"
+            app:destination="@id/mainFragment"/>
+
+        <action
+            android:id="@+id/action_recordFragment_to_showFragment"
+            app:destination="@+id/saveFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/saveFragment"
+        android:name="com.example.finalpracticeproject.ShowFragment"
+        android:label="fragment_save"
+        tools:layout="@layout/fragment_show" >
+
+        <action
+            android:id="@+id/action_saveFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+
+        <action
+            android:id="@+id/action_saveFragment_to_recordFragment"
+            app:destination="@id/recordFragment" />
+    </fragment>
+
+
+
+</navigation>
